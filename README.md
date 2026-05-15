@@ -175,7 +175,7 @@ The file tree for VideoCount should look like (note: all the files are not visua
           |LaSOT
           |YFCC100M
   ```
-Download the TAO validation videos from [here](https://motchallenge.net/data/2-TAO_VAL.zip), unzip the folder, and place the unzipped TAO ```val``` folder inside the ```TAO-Count\frames``` folder in the ```VideoCount``` directory (visualized above). You can also follow the directions at [this](https://motchallenge.net/data/TAO_Challenge/) link to download the TAO videos if the first link does not work for you.
+Download the TAO validation videos from [here](https://huggingface.co/datasets/chengyenhsieh/TAO-Amodal), unzip the folder, and place the unzipped TAO ```val``` folder inside the ```TAO-Count\frames``` folder in the ```VideoCount``` directory (visualized above). You can also follow the directions at [this](https://motchallenge.net/data/TAO_Challenge/) link to download the TAO videos if the first link does not work for you.
 
 Download the MOT20 training videos from [here](https://motchallenge.net/data/MOT20.zip). Place the frames for the MOT20-01, MOT20-02, and MOT20-05 sequences in each of the respective directories in the ```MOT20-Count\frames``` folder in the ```VideoCount``` directory.
 
