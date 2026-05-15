@@ -135,7 +135,7 @@ You should see the following videos saved to the ```demo_output``` folder once t
 Download FSCD-147 from [here](https://drive.google.com/file/d/1m_v_hBwXH1NzcuUj_qa-ziKn-LYfUWA6/view?usp=sharing), and update [datasets_fscd147_val.json](config/datasets_fscd147_val.json), and [datasets_fscd147_test.json](config/datasets_fscd147_test.json) to point to the image folder you have downloaded.
 
 ### 2. Download VideoCount
-Download VideoCount [here](https://drive.google.com/file/d/1KE7oq7liiQs1wEjYcHzXH8Z1onu-MTOT/view?usp=sharing), and make sure to pass the location of the ```VideoCount``` folder in the input to the ```--data_dir``` command when testing on videos in VideoCount.
+Download VideoCount [here](https://drive.google.com/file/d/1elk1-83dstQ0hEPLctrLKUNz4qUkrdDs/view?usp=sharing), and make sure to pass the location of the ```VideoCount``` folder in the input to the ```--data_dir``` command when testing on videos in VideoCount.
 
 The file tree for VideoCount should look like (note: all the files are not visualized for readability purposes):
 
@@ -175,9 +175,7 @@ The file tree for VideoCount should look like (note: all the files are not visua
           |LaSOT
           |YFCC100M
   ```
-Download the TAO validation videos from [here](https://huggingface.co/datasets/chengyenhsieh/TAO-Amodal), unzip the folder, and place the unzipped TAO ```val``` folder inside the ```TAO-Count\frames``` folder in the ```VideoCount``` directory (visualized above). You can also follow the directions at [this](https://motchallenge.net/data/TAO_Challenge/) link to download the TAO videos if the first link does not work for you.
-
-Download the MOT20 training videos from [here](https://motchallenge.net/data/MOT20.zip). Place the frames for the MOT20-01, MOT20-02, and MOT20-05 sequences in each of the respective directories in the ```MOT20-Count\frames``` folder in the ```VideoCount``` directory.
+Download the TAO validation videos from [here](https://drive.google.com/file/d/1OKj0BgqBeLcdVgvR_5EytYUFraj0PNVI/view?usp=sharing), unzip the folder, and place the unzipped TAO ```val``` folder inside a new ```TAO-Count\frames``` folder in the ```VideoCount``` directory (visualized above). You can also follow the directions at [this](https://motchallenge.net/data/TAO_Challenge/) or [this](https://huggingface.co/datasets/chengyenhsieh/TAO-Amodal) link to download the TAO videos if the first link does not work for you.
 
 The files titled ```[benchmark_name]-count-gt.json``` contain the *global count*, the number of unique objects per video for each category. The files titled ```[benchmark_name]-frame-level-counts-gt.json``` contain the *cumulative count at each frame*, the number of unique objects detected so far in the video for each category. The global count for a video is the frame-level count at the last frame.
 
