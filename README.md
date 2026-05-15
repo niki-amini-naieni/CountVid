@@ -307,6 +307,8 @@ python evaluate_counting_accuracy.py --ground_truth VideoCount/Crystals/anno/cry
 ### 6. Science-Count (Crystals) Pseudo-Exemplars
 In the paper [CountGD++: Generalized Prompting for Open-World Counting](https://arxiv.org/abs/2512.23351), "pseudo-exemplars" are introduced. These are visual exemplars selected from the output of CountGD-Box given text only. The benefit of these exemplars in video counting is that they are automatically detected in each frame and, thus, evolve as the objects do throughout time. In the case of Crystals, they are particularly helpful, since the crystals change structure significantly and rapidly throughout the video. See Figure 5 below from the CountGD++ paper for a depiction of the pseudo-exemplars applied to Crystals. In practice, more than 3 pseudo-exemplars are selected for each frame, but for the sake of clarity in the illustration, only 3 are shown. Since the exemplars are selected automatically given only the text prompt, any number of pseudo-exemplars can be used without any additional manual effort.
 
+* Note: the CountGD++ paper uses SAM 2 instead of SAM 2.1 for the VideoCount (Crystals) result. We stick to SAM 2.1 here to be consistent with the rest of the repository.
+
 <img src=img/pseudo_exemplars.png width="100%"/>
 
 * To test the text-only setting with pseudo-exemplars, run the following commands:
