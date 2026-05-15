@@ -304,6 +304,18 @@ python test_crystals.py --output_file crystals-count-exemplars-and-text-predicte
 python evaluate_counting_accuracy.py --ground_truth VideoCount/Crystals/anno/crystals-count-gt.json --predicted crystals-count-exemplars-and-text-predicted.json --parent_dir VideoCount/Crystals/frames
 ```
 
+### 6. Science-Count (Crystals) Pseudo-Exemplars
+In the paper [CountGD++: Generalized Prompting for Open-World Counting](https://arxiv.org/abs/2512.23351), "pseudo-exemplars" are introduced. These are visual exemplars selected from the output of CountGD-Box given text only. The benefit of these exemplars in video counting is that they are automatically detected in each frame and, thus, evolve as the objects do throughout time. In the case of Crystals, they are particularly helpful, since the crystals change structure significantly and rapidly throughout the video. See Figure 5 below from the CountGD++ paper for a depiction of the pseudo-exemplars applied to Crystals. In practice, more than 3 pseudo-exemplars are selected for each frame, but for the sake of clarity in the illustration, only 3 are shown. Since the exemplars are selected automatically given only the text prompt, any number of pseudo-exemplars can be used without any additional manual effort.
+
+<img src=img/pseudo_exemplars.jpg width="100%"/>
+
+* To test the text-only setting with pseudo-exemplars, run the following commands:
+```
+python test_crystals_pseudo_exemplars.py --output_file crystals-count-text-only-pseudo-exemplars-predicted.json --data_dir VideoCount/Crystals --checkpoint_dir checkpoints
+```
+```
+python evaluate_counting_accuracy.py --ground_truth VideoCount/Crystals/anno/crystals-count-gt.json --predicted crystals-count-text-only-pseudo-exemplars-predicted.json --parent_dir VideoCount/Crystals/frames
+```
 
 ## Training CountGD-Box
 The training code is downloadable [here](https://drive.google.com/file/d/1jLe9OP4MXr-yVfS-CruXRDF6D9H2Bi7-/view?usp=sharing). Once trained, the model can be used for inference in the main repository. The command used for training is in train.sh (in the zip folder).
