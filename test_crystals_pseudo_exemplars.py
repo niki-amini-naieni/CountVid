@@ -42,7 +42,7 @@ for video in crystals_gt:
   for input_text in crystals_gt[video]:
     if args.no_text:
         input_text = ""
-    command = 'python count_in_videos_pseudo_exemplars.py --video_dir "' + os.path.join(video_dir, video) + '" --input_text "' + input_text + '" --sam_checkpoint "' + sam_checkpoint + '" --sam_model_cfg "configs/sam2.1/sam2.1_hiera_l.yaml" --obj_batch_size 30 --img_batch_size 10 --downsample_factor ' + str(3/3) + ' --pretrain_model_path "' + countgd_box_path + '" --output_file "' + args.output_file + '" --temp_dir "' + os.path.join(os.getcwd(), "crystals_temp_dir") + '" --temporal_filter --w 3 --convert_to_rgb'
+    command = 'python count_in_videos_pseudo_exemplars.py --video_dir "' + os.path.join(video_dir, video) + '" --input_text "' + input_text + '" --sam_checkpoint "' + sam_checkpoint + '" --sam_model_cfg "configs/sam2.1/sam2.1_hiera_l.yaml" --obj_batch_size 30 --img_batch_size 1 --downsample_factor ' + str(3/3) + ' --pretrain_model_path "' + countgd_box_path + '" --output_file "' + args.output_file + '" --temp_dir "' + os.path.join(os.getcwd(), "crystals_temp_dir") + '" --temporal_filter --w 3 --convert_to_rgb'
     if args.use_exemplars:
         command = command + ' --use_exemplars --exemplar_file "' + os.path.join(exemplar_dir, video, "exemplars.json") + '" --exemplar_image_file "' + os.path.join(exemplar_dir, video, "exemplar_image.jpg") + '"'
 
