@@ -144,7 +144,12 @@ def preparing_dataset(pathdict, image_set, args):
                 import zipfile
                 print("Starting unzip <{}>".format(cp_tgt_path))
                 with zipfile.ZipFile(cp_tgt_path, 'r') as zip_ref:
-                    zip_ref.extractall(os.path.dirname(cp_tgt_path))      
+                    target_dir = os.path.dirname(cp_tgt_path)
+                    for member in zip_ref.infolist():
+                        member_path = os.path.abspath(os.path.join(target_dir, member.filename))
+                        if os.path.commonpath([os.path.abspath(target_dir), member_path]) != os.path.abspath(target_dir):
+                            raise ValueError('Unsafe path in zip archive: ' + member.filename)
+                        zip_ref.extract(member, target_dir)
 
                 copyfilelist.append(cp_tgt_path)
                 copyfilelist.append(tgt_v)
